@@ -1,4 +1,4 @@
-# v0 Pine Script Indicator
+# tickergro v0
 
 ## Overview
 The `v0` indicator is a **trend-following tool** designed for TradingView. It helps traders **visualize market trends and potential reversals** by plotting **dynamic trend lines** and marking bullish/bearish conditions.
@@ -23,7 +23,6 @@ The `v0` indicator is a **trend-following tool** designed for TradingView. It he
 - Marks **bearish signals** with 🔴 **red triangles above bars**.
 
 ## Example Chart
-![Example Chart](insert-image-url-here)
 ![image](https://github.com/user-attachments/assets/adbc90fd-84cd-4c78-bd4f-850fce509fa7)
 https://www.tradingview.com/x/Nz6Vo1Pj/
 
@@ -41,7 +40,3 @@ Pull requests are welcome. For major changes, please open an issue first to disc
 ```
 For any inquiries or suggestions, please reach out via GitHub issues.
 ```
-
----
-This README provides a structured and formatted explanation of the `v0` indicator for easy integration and use on GitHub. Let me know if you need additional modifications! 🚀
-
