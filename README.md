@@ -14,6 +14,10 @@ The `v0` indicator is a **trend-following tool** designed for TradingView. It he
 1. Copy the Pine Script code into the TradingView Pine Editor.
 2. Click "Add to Chart" to activate the indicator.
 3. Adjust settings as needed.
+
+or
+
+just add it directly on your tradingview chart from here - https://www.tradingview.com/script/4TrPUhxu-v0/
 ```
 
 ## How It Works
