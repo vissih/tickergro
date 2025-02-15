@@ -1,0 +1,61 @@
+//@version=6
+indicator('v0', overlay = true)
+
+amplitude = int(2)
+
+var trend = 0
+var nextTrend = 0
+var maxLowPrice = na(low[1]) ? low : low[1]
+var minHighPrice = na(high[1]) ? high : high[1]
+var float up = 0.0
+var float down = 0.0
+
+highPrice = high[math.abs(ta.highestbars(amplitude))]
+lowPrice = low[math.abs(ta.lowestbars(amplitude))]
+highma = ta.sma(high, amplitude)
+lowma = ta.sma(low, amplitude)
+
+if nextTrend == 1
+    maxLowPrice := math.max(lowPrice, maxLowPrice)
+    if highma < maxLowPrice and close < low[1]
+        trend := 1
+        nextTrend := 0
+        minHighPrice := highPrice
+        minHighPrice
+else
+    minHighPrice := math.min(highPrice, minHighPrice)
+    if lowma > minHighPrice and close > high[1]
+        trend := 0
+        nextTrend := 1
+        maxLowPrice := lowPrice
+        maxLowPrice
+
+if trend == 0
+    if not na(trend[1]) and trend[1] != 0
+        up := na(down[1]) ? down : down[1]
+        up
+    else
+        up := na(up[1]) ? maxLowPrice : math.max(maxLowPrice, up[1])
+        up
+else
+    if not na(trend[1]) and trend[1] != 1
+        down := na(up[1]) ? up : up[1]
+        down
+    else
+        down := na(down[1]) ? minHighPrice : math.min(minHighPrice, down[1])
+        down
+
+ht = trend == 0 ? up : down
+
+var color buyColor = color.rgb(76, 175, 80)
+var color sellColor = color.rgb(255, 82, 82)
+
+htColor = trend == 0 ? buyColor : sellColor
+htPlot = plot(ht, linewidth = 2, color = htColor)
+
+bullish = close >= high[1] and low <= low[1]
+bearish = close <= low[1] and high >= high[1]
+
+plotshape(series = bullish, title = 'Bullish', style = shape.triangleup, location = location.belowbar, color = color.rgb(76, 175, 80))
+
+plotshape(series = bearish, title = 'Bearish', style = shape.triangledown, location = location.abovebar, color = color.rgb(255, 82, 82))
