@@ -3,8 +3,6 @@
 ## Overview
 The `v0` indicator is a **trend-following tool** designed for TradingView. It helps traders **visualize market trends and potential reversals** by plotting **dynamic trend lines** and marking bullish/bearish conditions.
 
-live link - https://www.tradingview.com/script/4TrPUhxu-v0/
-
 ## Features
 - **Dynamic Trend Detection**
 - **Color-coded Trend Line** (Green for bullish, Red for bearish)
